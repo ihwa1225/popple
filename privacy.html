@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>포플링 개인정보처리방침</title>
+<style>
+:root {
+	--bg: #ffffff;
+	--fg: #1c2230;
+	--fg-2: #4a5263;
+	--line: #dde1e8;
+	--soft: #f3f5f8;
+	--accent: #0f7a4a;
+	--todo-bg: #fff3c4;
+	--todo-fg: #6b4e00;
+	color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #16191f;
+		--fg: #e6e9ef;
+		--fg-2: #b3b9c6;
+		--line: #2f3542;
+		--soft: #1f242d;
+		--accent: #4ade80;
+		--todo-bg: #4a3a0a;
+		--todo-fg: #ffe28a;
+		color-scheme: dark;
+	}
+}
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	padding: 0 16px 64px;
+	background: var(--bg);
+	color: var(--fg);
+	font: 16px/1.75 "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+	word-break: keep-all;
+	overflow-wrap: anywhere;
+}
+.wrap { max-width: 760px; margin: 0 auto; }
+header { padding: 36px 0 20px; border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; color: var(--accent); text-decoration: none; }
+nav.docs { margin-top: 8px; font-size: 14px; display: flex; gap: 14px; }
+nav.docs a { color: var(--fg-2); }
+nav.docs a[aria-current="page"] { color: var(--fg); font-weight: 600; text-decoration: none; }
+h1 { font-size: 30px; line-height: 1.3; margin: 18px 0 6px; }
+.meta { color: var(--fg-2); font-size: 14px; margin: 0; }
+h2 { font-size: 20px; margin: 40px 0 10px; scroll-margin-top: 16px; }
+h3 { font-size: 16.5px; margin: 22px 0 6px; }
+p, li { max-width: 70ch; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 4px; }
+.toc { background: var(--soft); border-radius: 10px; padding: 14px 18px; margin: 24px 0 8px; font-size: 14.5px; }
+.toc ol { margin: 6px 0 0; }
+.tbl { overflow-x: auto; margin: 10px 0 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; line-height: 1.6; }
+th, td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
+th { background: var(--soft); font-weight: 600; white-space: nowrap; }
+.note { background: var(--soft); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 15px; }
+mark.todo { background: var(--todo-bg); color: var(--todo-fg); padding: 0 4px; border-radius: 4px; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--fg-2); font-size: 14px; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<!--
+	초안 — 법률 검토 전. <mark class="todo">로 표시한 곳은 게시 전에 채우거나 지울 것.
+	1단계(로그인) 기준으로 작성함. 2단계(사용 통계)를 켤 때 아래 "선택 수집: 사용 통계" 주석 블록을 풀고,
+	4단계(구독) 때 결제 관련 항목·보관 기간(전자상거래법)·결제사 위탁을 추가할 것.
+-->
+<div class="wrap">
+	<header>
+		<a class="brand" href="./">포플링</a>
+		<nav class="docs" aria-label="문서">
+			<a href="./privacy.html" aria-current="page">개인정보처리방침</a>
+			<a href="./terms.html">이용약관</a>
+		</nav>
+		<h1>개인정보처리방침</h1>
+		<p class="meta">시행일: 2026년 10월 6일</p>
+	</header>
+
+	<p>김지훈(이하 "운영자")은 영상 자막·학습 프로그램 "포플링"(이하 "서비스")을 운영하며, 「개인정보 보호법」 등 관련 법령에 따라 이용자의 개인정보를 보호하고 이와 관련한 고충을 원활하게 처리하기 위해 다음과 같이 개인정보처리방침을 정합니다.</p>
+
+	<div class="note">
+		<strong>한눈에 보기:</strong> 포플링은 로그인과 계정 운영에 필요한 최소한의 정보만 서버에 저장합니다. 이용자가 여는 <strong>영상, 자막, 노트, 학습 기록, AI 키는 이용자의 PC에만 저장</strong>되며 운영자에게 전송되지 않습니다.
+	</div>
+
+	<nav class="toc" aria-label="목차">
+		<strong>목차</strong>
+		<ol>
+			<li><a href="#p1">처리하는 개인정보 항목과 수집 방법</a></li>
+			<li><a href="#p2">개인정보의 처리 목적</a></li>
+			<li><a href="#p3">보유 및 이용 기간</a></li>
+			<li><a href="#p4">파기 절차와 방법</a></li>
+			<li><a href="#p5">제3자 제공</a></li>
+			<li><a href="#p6">처리 위탁과 국외 이전</a></li>
+			<li><a href="#p7">이용자의 권리와 행사 방법</a></li>
+			<li><a href="#p8">안전성 확보 조치</a></li>
+			<li><a href="#p9">자동으로 수집되는 정보</a></li>
+			<li><a href="#p10">만 14세 미만 아동</a></li>
+			<li><a href="#p11">개인정보 보호책임자</a></li>
+			<li><a href="#p12">권익 침해 구제 방법</a></li>
+			<li><a href="#p13">처리방침의 변경</a></li>
+		</ol>
+	</nav>
+
+	<h2 id="p1">1. 처리하는 개인정보 항목과 수집 방법</h2>
+	<p>서비스는 Google·카카오·네이버 계정으로 로그인하는 방식만 제공하며, 비밀번호를 받거나 저장하지 않습니다.</p>
+	<div class="tbl">
+		<table>
+			<thead><tr><th>구분</th><th>항목</th><th>수집 방법</th></tr></thead>
+			<tbody>
+				<tr><td>필수</td><td>이메일 주소, 이름(또는 닉네임), 프로필 사진 주소, 로그인에 사용한 서비스(Google·카카오·네이버)와 그 서비스가 주는 회원 고유 식별자</td><td>로그인할 때 해당 서비스에서 이용자 동의를 거쳐 받음</td></tr>
+				<tr><td>필수</td><td>가입일, 마지막 접속 일시, 약관·개인정보 동의 기록(만 14세 이상 확인 포함)</td><td>서비스 이용 중 생성</td></tr>
+				<tr><td>필수</td><td>기기 정보: 설치마다 만드는 무작위 기기 식별값, 운영체제 종류·버전, 앱 버전, 기기별 처음·마지막 접속 일시</td><td>앱 실행 시 자동 생성·수집</td></tr>
+				<tr><td>선택</td><td>설문 응답(설문을 띄운 경우에만, 응답·건너뛰기 여부 포함)</td><td>이용자가 앱 안 설문에 직접 응답</td></tr>
+				<!-- 선택 수집: 사용 통계 (2단계에서 풀 것)
+				<tr><td>선택</td><td>사용 통계: 기능 사용 여부와 횟수, 앱 버전, 운영체제(파일 이름·경로, 자막 내용, 노트 내용, 영상 주소는 수집하지 않음)</td><td>이용자가 동의한 경우 앱이 자동 전송. 설정 &gt; 계정에서 언제든 끌 수 있음</td></tr>
+				-->
+			</tbody>
+		</table>
+	</div>
+	<p><strong>수집하지 않는 정보:</strong> 이용자가 서비스에서 여는 영상 파일과 주소, 자막, 노트, 학습 기록, 프로젝트 파일, 이용자가 설정에 입력한 AI(Google Gemini) API 키는 이용자의 PC에만 저장되며 운영자 서버로 전송되지 않습니다. AI 기능은 이용자의 키로 이용자 PC에서 Google에 직접 요청하므로 운영자 서버를 거치지 않으며, 그 처리에는 Google의 약관과 개인정보처리방침이 적용됩니다.</p>
+
+	<h2 id="p2">2. 개인정보의 처리 목적</h2>
+	<ul>
+		<li><strong>회원 식별과 로그인 유지:</strong> 본인 확인, 자동 로그인, 부정 이용 방지</li>
+		<li><strong>서비스 운영:</strong> 기기·앱 버전별 이용 현황 파악, 오류 대응, 공지 전달</li>
+		<li><strong>서비스 개선:</strong> 설문 응답을 통한 이용자 요구 파악(선택)</li>
+		<li><strong>문의 처리:</strong> 이용자 문의와 고충 처리</li>
+	</ul>
+
+	<h2 id="p3">3. 보유 및 이용 기간</h2>
+	<ul>
+		<li>개인정보는 <strong>회원 탈퇴 시까지</strong> 보유하며, 탈퇴하면 지체 없이 파기합니다.</li>
+		<li>서비스 장애에 대비한 백업본에는 탈퇴 후에도 <strong>최대 30일</strong>간 남을 수 있으며, 30일이 지나면 자동으로 파기됩니다.</li>
+		<li>관계 법령에 따라 보존해야 하는 정보가 생기면(예: 유료 서비스 결제 기록) 해당 법령이 정한 기간 동안 보관하며, 이 방침에 그 항목과 기간을 추가해 알립니다.</li>
+	</ul>
+
+	<h2 id="p4">4. 파기 절차와 방법</h2>
+	<p>보유 기간이 끝나거나 처리 목적을 이룬 개인정보는 지체 없이 파기합니다. 전자적 파일은 복구할 수 없는 방법으로 삭제하며, 종이 문서로 된 개인정보는 처리하지 않습니다.</p>
+
+	<h2 id="p5">5. 제3자 제공</h2>
+	<p>운영자는 이용자의 개인정보를 제3자에게 제공하지 않습니다. 다만 법령에 따라 수사기관 등이 적법한 절차로 요구하는 경우는 예외로 합니다.</p>
+
+	<h2 id="p6">6. 처리 위탁과 국외 이전</h2>
+	<p>운영자는 서비스 제공을 위해 아래와 같이 개인정보 처리 업무를 위탁하고 있으며, 위탁받는 자가 국외 사업자이므로 개인정보가 국외로 이전될 수 있습니다.</p>
+	<div class="tbl">
+		<table>
+			<thead><tr><th>항목</th><th>내용</th></tr></thead>
+			<tbody>
+				<tr><td>위탁받는 자(이전받는 자)</td><td>Supabase Pte. Ltd.</td></tr>
+				<tr><td>국가</td><td>싱가포르(데이터 저장 위치: 대한민국 서울 리전)</td></tr>
+				<tr><td>연락처</td><td>privacy@supabase.com</td></tr>
+				<tr><td>위탁 업무</td><td>회원 인증(로그인), 데이터베이스와 서버 운영</td></tr>
+				<tr><td>이전되는 항목</td><td>1항의 모든 항목</td></tr>
+				<tr><td>이전 시기와 방법</td><td>서비스 이용 시 암호화된 통신(HTTPS)으로 수시 전송</td></tr>
+				<tr><td>보유 기간</td><td>3항과 같음(회원 탈퇴 또는 위탁 계약 종료 시까지)</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<p>국외 이전을 원하지 않으면 회원 가입을 하지 않거나 탈퇴할 수 있습니다. 다만 서비스는 로그인이 필요하므로 이 경우 서비스를 이용할 수 없습니다.</p>
+
+	<h2 id="p7">7. 이용자의 권리와 행사 방법</h2>
+	<ul>
+		<li>이용자는 언제든지 자신의 개인정보를 열람·정정·삭제하거나 처리 정지를 요구할 수 있습니다.</li>
+		<li>앱의 <strong>설정 &gt; 계정</strong>에서 계정 정보를 확인하고, 선택 동의를 철회하고, <strong>회원 탈퇴</strong>를 직접 할 수 있습니다.</li>
+		<li>그 밖의 요구는 11항의 연락처로 하면 지체 없이 처리합니다.</li>
+	</ul>
+
+	<h2 id="p8">8. 안전성 확보 조치</h2>
+	<ul>
+		<li>모든 통신은 암호화(HTTPS)합니다.</li>
+		<li>이용자 PC에 저장되는 로그인 정보는 운영체제의 보안 저장소(Windows DPAPI)로 암호화합니다.</li>
+		<li>서버 데이터는 이용자 본인만 자기 정보에 접근할 수 있도록 행 단위 접근 제어를 적용합니다.</li>
+		<li>관리자 권한은 운영자 본인으로 한정하고, 관리용 키는 앱에 포함하지 않습니다.</li>
+	</ul>
+
+	<h2 id="p9">9. 자동으로 수집되는 정보</h2>
+	<p>서비스는 데스크톱 프로그램으로, 웹 쿠키를 사용하지 않습니다. 1항의 기기 정보(무작위 기기 식별값, 운영체제, 앱 버전, 접속 일시)는 앱 실행 시 자동으로 생성·수집됩니다. 이 기기 식별값은 설치마다 무작위로 만들며, 하드웨어 고유번호 등 기기를 특정하는 정보를 사용하지 않습니다.</p>
+
+	<h2 id="p10">10. 만 14세 미만 아동</h2>
+	<p>서비스는 만 14세 미만 아동의 회원 가입을 받지 않으며, 가입할 때 만 14세 이상임을 확인합니다. 만 14세 미만 자녀가 보호자의 계정으로 로그인한 PC에서 보호자의 관리 아래 서비스를 이용하는 경우, 운영자는 보호자 계정의 정보만 처리합니다. 만 14세 미만 아동의 개인정보가 수집된 사실을 알게 되면 지체 없이 파기합니다.</p>
+
+	<h2 id="p11">11. 개인정보 보호책임자</h2>
+	<div class="tbl">
+		<table>
+			<tbody>
+				<tr><th>담당</th><td>포플링 운영팀</td></tr>
+				<tr><th>연락처</th><td><a href="mailto:ihwa@icloud.com">ihwa@icloud.com</a></td></tr>
+			</tbody>
+		</table>
+	</div>
+	<p>개인정보와 관련한 문의, 불만, 피해 구제는 위 연락처로 하면 지체 없이 답변하고 처리합니다.</p>
+
+	<h2 id="p12">12. 권익 침해 구제 방법</h2>
+	<p>개인정보 침해에 대한 상담이나 신고가 필요하면 아래 기관에 문의할 수 있습니다.</p>
+	<ul>
+		<li>개인정보침해신고센터: 국번 없이 118 (privacy.kisa.or.kr)</li>
+		<li>개인정보분쟁조정위원회: 1833-6972 (www.kopico.go.kr)</li>
+		<li>대검찰청 사이버수사과: 국번 없이 1301 (www.spo.go.kr)</li>
+		<li>경찰청 사이버수사국: 국번 없이 182 (ecrm.police.go.kr)</li>
+	</ul>
+
+	<h2 id="p13">13. 처리방침의 변경</h2>
+	<p>이 처리방침을 바꾸면 시행 7일 전부터 서비스 안 공지와 이 페이지로 알립니다. 수집 항목이나 이용 목적이 바뀌는 등 이용자 권리에 중요한 변경은 시행 30일 전에 알리고, 필요하면 다시 동의를 받습니다.</p>
+
+	<footer>
+		<p>시행일: 2026년 10월 6일</p>
+	</footer>
+</div>
+</body>
+</html>
