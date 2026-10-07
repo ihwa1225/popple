@@ -574,6 +574,22 @@ footer a:hover { color: var(--text); }
 	}, { rootMargin: "0px 0px -8% 0px" });
 	els.forEach(function (el) { io.observe(el); });
 })();
+
+// 다운로드 버튼이 설치 파일을 바로 받게 함 — 설치 파일 이름에 버전이 들어 있어(Popple-Setup-0.1.8.exe) 고정된 주소가 없으므로,
+// 페이지가 열릴 때 GitHub에 최신 릴리스를 물어 그 설치 파일 주소로 버튼의 링크를 바꿈. 새 버전을 게시하면 저절로 따라감.
+// 묻는 데 실패하면(오프라인·요청 제한 등) 버튼은 원래대로 릴리스 페이지로 감.
+(function () {
+	if (!window.fetch) return;
+	fetch("https://api.github.com/repos/ihwa1225/popple/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+		.then(function (res) { return res.ok ? res.json() : null; })
+		.then(function (release) {
+			var assets = (release && release.assets) || [];
+			var setup = assets.filter(function (a) { return /^Popple-Setup-[\d.]+\.exe$/.test(a.name); })[0];
+			if (!setup || !/^https:\/\/github\.com\/ihwa1225\/popple\/releases\/download\//.test(setup.browser_download_url)) return;
+			document.querySelectorAll("a.btn-dl").forEach(function (a) { a.href = setup.browser_download_url; });
+		})
+		.catch(function () {});
+})();
 </script>
 </body>
 </html>
