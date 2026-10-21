@@ -175,6 +175,16 @@ section { padding: 88px 0; }
 .faq summary::after { content: "+"; color: var(--text-3); font-weight: 400; }
 .faq details[open] summary::after { content: "−"; }
 .faq details p { color: var(--text-2); padding-bottom: 18px; font-size: 15px; }
+.faq .guide { list-style: none; margin: 0; padding: 0 0 20px; counter-reset: g; display: flex; flex-direction: column; gap: 22px; }
+.faq .guide li { counter-increment: g; }
+.faq .guide h4 { margin: 0 0 6px; font-family: var(--f-head); font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.faq .guide h4::before { content: counter(g); display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--lime); color: var(--lime-ink); font-size: 13px; font-weight: 700; flex: none; }
+.faq .guide p { padding-bottom: 10px; }
+.faq .guide b { color: var(--text); font-weight: 600; }
+.faq .guide img { display: block; max-width: min(100%, 420px); height: auto; border-radius: 10px; border: 1px solid var(--line); }
+.faq .guide img.bare { border: 0; border-radius: 0; }
+.hero-meta a { color: var(--text-2); }
+#install-warning { scroll-margin-top: 84px; }
 
 /* 다운로드 띠 */
 .cta-band { text-align: center; padding: 72px 20px; border-radius: 24px; background: radial-gradient(90% 120% at 50% 0%, rgba(184, 166, 255, 0.16), transparent 60%), var(--bg-2); border: 1px solid var(--line); }
@@ -256,7 +266,7 @@ footer a:hover { color: var(--text); }
 			</a>
 			<a class="btn btn-ghost" href="#features">기능 둘러보기</a>
 		</div>
-		<p class="hero-meta">Windows 10·11 · 카카오·Google 계정으로 시작</p>
+		<p class="hero-meta">Windows 10·11 · 카카오·Google 계정으로 시작 · <a href="#install-warning">설치할 때 경고가 뜨면</a></p>
 
 		<figure class="shot loop" id="loop" aria-label="포플링으로 공부하는 흐름: 한 문장을 처음엔 귀로만 듣고, 다시 글자와 함께 들은 뒤, 표현을 노트에 남깁니다">
 			<svg class="loop-ribbon" id="ribbon" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path class="r3" id="r3" d="M0 60H1000"/><path class="r2" id="r2" d="M0 60H1000"/><path class="r1" id="r1" d="M0 60H1000"/></svg>
@@ -340,9 +350,31 @@ footer a:hover { color: var(--text); }
 					<summary>인터넷이 꼭 있어야 하나요?</summary>
 					<p>처음 로그인할 때와, 그 뒤로 14일에 한 번은 연결이 필요합니다. 그 밖에는 인터넷 없이도 영상을 열고 자막을 만들고 공부할 수 있습니다. 온라인 영상은 인터넷이 있어야 볼 수 있습니다.</p>
 				</details>
-				<details>
-					<summary>설치할 때 "Windows의 PC 보호" 창이 떠요.</summary>
-					<p>아직 코드 서명 인증서가 없는 작은 앱이라 Windows가 처음 보는 프로그램으로 경고합니다. 창에서 "추가 정보"를 누른 뒤 "실행"을 누르면 설치됩니다. 설치 파일은 공식 다운로드 페이지(GitHub)에서만 받아 주세요.</p>
+				<details id="install-warning">
+					<summary>내려받거나 설치할 때 경고가 떠요.</summary>
+					<p>아직 코드 서명 인증서가 없는 작은 앱이라, Windows와 Edge가 처음 보는 프로그램으로 경고할 수 있습니다. 경고가 늘 뜨는 것은 아니고, 뜨면 아래처럼 하면 설치됩니다. 설치 파일은 이 홈페이지의 다운로드 버튼(GitHub)에서만 받아 주세요.</p>
+					<ol class="guide">
+						<li>
+							<h4>Edge에서 내려받을 때</h4>
+							<p>다운로드 목록에 "일반적으로 다운로드되지 않습니다"가 뜨면, 그 줄의 <b>…</b>(더 보기)를 누릅니다.</p>
+							<img class="bare" src="./img/edge-download-warning.png" width="360" height="198" loading="lazy" alt="Edge 다운로드 목록의 경고: Popple-Setup-0.1.27.exe은(는) 일반적으로 다운로드되지 않습니다 — 더 보기 버튼 표시">
+						</li>
+						<li>
+							<h4>유지 누르기</h4>
+							<p>메뉴에서 <b>유지</b>를 누릅니다. 확인 창이 한 번 더 뜨면 <b>자세히 표시</b> → <b>그래도 계속</b>을 누릅니다.</p>
+							<img class="bare" src="./img/edge-download-keep.png" width="250" height="208" loading="lazy" alt="더 보기 메뉴 — 유지 항목 표시">
+						</li>
+						<li>
+							<h4>설치 파일을 실행할 때</h4>
+							<p>"Windows의 PC 보호" 창이 뜨면 <b>추가 정보</b>를 누릅니다.</p>
+							<img src="./img/smartscreen-1.png" width="798" height="748" loading="lazy" alt="Windows의 PC 보호 창 — 추가 정보 링크 표시">
+						</li>
+						<li>
+							<h4>실행 누르기</h4>
+							<p>앱 이름이 <b>Popple-Setup-…exe</b>인지 확인하고 <b>실행</b>을 누르면 설치가 시작됩니다.</p>
+							<img src="./img/smartscreen-2.png" width="798" height="748" loading="lazy" alt="추가 정보를 연 Windows의 PC 보호 창 — 실행 버튼 표시">
+						</li>
+					</ol>
 				</details>
 				<details>
 					<summary>Mac에서도 쓸 수 있나요?</summary>
@@ -589,6 +621,15 @@ footer a:hover { color: var(--text); }
 			document.querySelectorAll("a.btn-dl").forEach(function (a) { a.href = setup.browser_download_url; });
 		})
 		.catch(function () {});
+})();
+// 설치 경고 안내로 가는 링크(#install-warning)는 접힌 질문을 펼친 뒤 그 자리로 감.
+(function () {
+	function openWarning() {
+		var d = document.getElementById("install-warning");
+		if (location.hash === "#install-warning" && d) { d.open = true; d.scrollIntoView({ block: "start" }); }
+	}
+	window.addEventListener("hashchange", openWarning);
+	openWarning();
 })();
 </script>
 </body>
